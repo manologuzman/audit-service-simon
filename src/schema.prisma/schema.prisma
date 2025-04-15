@@ -1,0 +1,29 @@
+model Geolocation {
+  id        String   @id @default(uuid())
+  deviceId  String
+  lat       Float
+  lng       Float
+  timestamp DateTime
+}
+
+model Routing {
+  id          String   @id @default(uuid())
+  deviceId    String
+  originLat   Float
+  originLng   Float
+  destLat     Float
+  destLng     Float
+  status      String
+  route       Json
+  cacheTTL    Int
+  timestamp   DateTime @default(now())
+}
+
+model Alert {
+  id        String   @id @default(uuid())
+  type      String
+  message   String
+  source    String
+  deviceId  String
+  timestamp DateTime @default(now())
+}
