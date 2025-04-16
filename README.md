@@ -84,22 +84,22 @@ POST /geolocation
 **Parámetros de consulta:**
 
 ```bash
-$ {
-$  "deviceId": "ASD-112",
-$  "lat": 4.710989,
-$  "lng": -74.072090
-$ }
+{
+  "deviceId": "ASD-112",
+  "lat": 4.710989,
+  "lng": -74.072090
+}
 ```
 
 **Respuesta:**
 
 ```bash
-$ {
-$    "deviceId": "ASD-112",
-$    "lat": 4.710989,
-$    "lng": -74.07209,
-$    "timestamp": "2025-04-16T16:37:31.125Z"
-$ }
+ {
+    "deviceId": "ASD-112",
+    "lat": 4.710989,
+    "lng": -74.07209,
+    "timestamp": "2025-04-16T16:37:31.125Z"
+}
 ```
 
 ### Audit Routing
@@ -111,33 +111,33 @@ POST /routing
 **Parámetros de consulta:**
 
 ```bash
-$ {
-$    "deviceId": "ABD-123",
-$    "origin": {
-$        "lat": 4.123,
-$        "lng": -74.123
-$    },
-$    "destination": {
-$        "lat": 4.567,
-$        "lng": -74.567
-$    },
-$    "route": [
-$        {
-$            "lat": 4.222,
-$            "lng": -74.222
-$        }
-$    ],
-$    "status": "success",
-$    "cacheTTL": 300
-$ }
+{
+    "deviceId": "ABD-123",
+    "origin": {
+        "lat": 4.123,
+        "lng": -74.123
+    },
+    "destination": {
+        "lat": 4.567,
+        "lng": -74.567
+    },
+    "route": [
+        {
+            "lat": 4.222,
+            "lng": -74.222
+        }
+    ],
+    "status": "success",
+    "cacheTTL": 300
+}
 ```
 
 **Respuesta:**
 
 ```bash
-$ {
-$    "message": "Routing data saved successfully"
-$ }
+{
+    "message": "Routing data saved successfully"
+}
 ```
 
 ### Audit Alerts
@@ -149,20 +149,20 @@ POST /alerts
 **Parámetros de consulta:**
 
 ```bash
-$ {
-$    "type": "routing-error",
-$    "message": "Timeout al calcular ruta",
-$    "source": "routing-service",
-$    "deviceId": "vehiculo-2"
-$ }
+{
+    "type": "routing-error",
+    "message": "Timeout al calcular ruta",
+    "source": "routing-service",
+    "deviceId": "vehiculo-2"
+}
 ```
 
 **Respuesta:**
 
 ```bash
-$ {
-$    "message": "Alerta registrada"
-$ }
+{
+    "message": "Alerta registrada"
+}
 ```
 
 ## Documentación API
@@ -182,6 +182,8 @@ Seguridad con Bearer Token (si se activa)
 ## Arquitectura
 
 El proyecto sigue una arquitectura hexagonal (puertos y adaptadores)
+
+http://localhost:3003/documentation/
 
 ## Pruebas
 
