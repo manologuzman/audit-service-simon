@@ -6,6 +6,7 @@ import { PrismaModule } from './infrastructure/database/prisma.module';
 
 import { GeolocationModule } from './modules/geolocation/geolocation.module';
 import { RoutingModule } from './modules/routing/routing.module';
+import { AlertModule } from './modules/alert/alert.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { RoutingModule } from './modules/routing/routing.module';
     }),
     GeolocationModule,
     RoutingModule,
+    AlertModule,
     PrismaModule,
   ],
   controllers: [AppController],
