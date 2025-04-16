@@ -2,8 +2,10 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
-import { GeolocationModule } from './modules/geolocation/geolocation.module';
 import { PrismaModule } from './infrastructure/database/prisma.module';
+
+import { GeolocationModule } from './modules/geolocation/geolocation.module';
+import { RoutingModule } from './modules/routing/routing.module';
 
 @Module({
   imports: [
@@ -12,6 +14,7 @@ import { PrismaModule } from './infrastructure/database/prisma.module';
       envFilePath: '.env',
     }),
     GeolocationModule,
+    RoutingModule,
     PrismaModule,
   ],
   controllers: [AppController],

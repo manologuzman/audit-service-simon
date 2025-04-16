@@ -23,16 +23,24 @@ model Geolocation {
 }
 
 model Routing {
+  id             String         @id @default(uuid())
+  deviceId       String
+  originLat      Float
+  originLng      Float
+  destinationLat Float
+  destinationLng Float
+  status         String
+  cacheTTL       Int
+  timestamp      DateTime       @default(now())
+  route          RoutingPoint[] // Relación con los puntos de la ruta
+}
+
+model RoutingPoint {
   id        String   @id @default(uuid())
-  deviceId  String
-  originLat Float
-  originLng Float
-  destLat   Float
-  destLng   Float
-  status    String
-  route     Json
-  cacheTTL  Int
-  timestamp DateTime @default(now())
+  lat       Float
+  lng       Float
+  routingId String
+  routing   Routing @relation(fields: [routingId], references: [id], onDelete: Cascade)
 }
 
 model Alert {
