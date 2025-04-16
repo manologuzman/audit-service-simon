@@ -20,12 +20,16 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('Audit Service')
-    .setDescription('API para auditoría de posiciones, rutas y alertas')
+    .setDescription(
+      'Microservicio de auditoría para geolocalización, ruteo y alertas',
+    )
     .setVersion('1.0')
+    .addBearerAuth()
+    .addTag('Audit')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup('api/docs', app, document); // URL: http://localhost:3000/api/docs
 
   await app.listen(process.env.PORT ?? 3000);
   console.log(

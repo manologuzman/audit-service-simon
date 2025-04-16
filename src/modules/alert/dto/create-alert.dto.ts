@@ -2,22 +2,28 @@ import { IsNotEmpty, IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateAlertDto {
-  @ApiProperty()
+  @ApiProperty({ example: 'routing-error', description: 'Tipo de alerta' })
   @IsString()
   @IsNotEmpty()
   type: string;
 
-  @ApiProperty()
+  @ApiProperty({
+    example: 'Timeout al calcular ruta',
+    description: 'Mensaje de alerta',
+  })
   @IsString()
   @IsNotEmpty()
   message: string;
 
-  @ApiProperty()
+  @ApiProperty({
+    example: 'routing-service',
+    description: 'Servicio que generó la alerta',
+  })
   @IsString()
   @IsNotEmpty()
   source: string;
 
-  @ApiProperty()
+  @ApiProperty({ example: 'JJJ-255', description: 'ID del dispositivo' })
   @IsString()
   @IsNotEmpty()
   deviceId: string;
